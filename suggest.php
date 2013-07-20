@@ -11,30 +11,30 @@ Error Validation and User Feedback with a bit of personality ;)
 //Error message:: for no name with no interests
 if($_POST["fullname"] == "" && !(isset($_POST['interests']))) {
 	echo '<div class="interests">';//div for position and styling
-	echo '<p>Did you even try T_T?</p><a href="/Exercise1/index.php">Return</a>';
+	echo '<p>Did you even try T_T?</p><a href="/nnash_ex1/index.php">Return</a>';
 	echo '</div>';
 } 
 
 //Error message:: for no name with interests
 if($_POST["fullname"] == "" && (isset($_POST['interests']))) {
 	echo '<div class="interests">';
-	echo '<p>What&apos;s your name stranger?</p><a href="/Exercise1/index.php">Return</a>';
+	echo '<p>What&apos;s your name stranger?</p><a href="/nnash_ex1/index.php">Return</a>';
 	echo '</div>';
 } 
 
 //Error message:: for name with no interests
 if($_POST["fullname"] != "" && !(isset($_POST['interests']))) {
 	echo '<div class="interests">';
-	echo '<p>Hey ', $fullname, ' you haven&apos;t selected any interests! Surely you&apos;re not that boring?</p><a href="/Exercise1/index.php">Return</a>';
+	echo '<p>Hey ', $fullname, ' you haven&apos;t selected any interests! Surely you&apos;re not that boring?</p><a href="/nnash_ex1/index.php">Return</a>';
 	echo '</div>';
 } 
 
 //Success condition:: for name with interests
 if($_POST["fullname"] != "" && (isset($_POST['interests']))) {
 	echo '<div class="interests">';	
-	echo '<p>Hey ', $fullname, ' here are some links I think you might enjoy!';	
+	echo '<p>Hey ', $fullname, ' here are some links I think you might enjoy!</p>';	
 	displayLinks();//Links are only displayed when the form validates successfully
-	echo '<a  href="/Exercise1">Return to start.</a>';			
+	echo '<a  href="/nnash_ex1">Return to start.</a>';			
 	echo '</div>';	
 } 
 
@@ -42,7 +42,7 @@ function displayLinks(){
 	$interests = $_POST['interests'];	
 	foreach ($interests as $interest){//Since each interest is stored in an array I can loop through them and assign a case
 		switch ($interest) {
-			case "Design"://If the use has selected an interest e.g., Design echo out links
+			case "Design"://If the use has selected an interest e.g., Design, echo out links
 				 echo "<h2>Design</h2>";
 				 echo '<p><a href="http://dribbble.com" target="_blank">Dribbble</a><br/>';
 				 echo '<a href="http://news.layervault.com" target="_blank">Designer News</a><br/>';
